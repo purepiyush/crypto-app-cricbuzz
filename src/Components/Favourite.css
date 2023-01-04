@@ -1,0 +1,8 @@
+.removeBtn{
+    background-color: red;
+  border-radius: 5px;
+  color: white;
+  height: 60%;
+  width: 70px;
+  cursor: pointer;
+}
