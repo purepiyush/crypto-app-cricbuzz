@@ -22,7 +22,7 @@
 
 .btnMore{
   /* margin: 20px; */
-  margin: 110px;
+  margin: 110px 0;
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -52,7 +52,7 @@ img {
 }
 
 .background {
-  width: 100%;
+  width: 100vw;
   height: 350px;
   background-image: linear-gradient(to right, blue,lightblue);
   display: flex;
@@ -144,5 +144,15 @@ thead {
 
 .tableFav thead{
   background-color: #fff;
+}
+
+
+@media (orientation: portrait){
+  table{
+    font-size: small;
+  }
+  .hide{
+    display: none;
+  }
 }
 

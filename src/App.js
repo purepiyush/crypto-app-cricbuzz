@@ -100,12 +100,12 @@ const App = () => {
                   <td>Rank</td>
                   <td>Name</td>
                   <td className="numericalText">Price</td>
-                  <td className="numericalText">Market Cap</td>
-                  <td className="numericalText">Volume</td>
-                  <td className="numericalText">Supply</td>
-                  <td className="numericalText">Price Change(1H)</td>
-                  <td className="numericalText">Price Change(1D)</td>
-                  <td className="numericalText">Price Change(1W)</td>
+                  <td className="numericalText hide">Market Cap</td>
+                  <td className="numericalText hide">Volume</td>
+                  <td className="numericalText hide">Supply</td>
+                  <td className="numericalText hide">Price Change(1H)</td>
+                  <td className="numericalText hide">Price Change(1D)</td>
+                  <td className="numericalText hide">Price Change(1W)</td>
                   <td></td>
                 </tr>
               </thead>
@@ -132,27 +132,27 @@ const App = () => {
               >
                 Market Cap
               </td>
-              <td onClick={() => sortNum("volume")} className="numericalText">
+              <td onClick={() => sortNum("volume")} className="numericalText hide">
                 Volume
               </td>
-              <td onClick={() => sortNum("supply")} className="numericalText">
+              <td onClick={() => sortNum("supply")} className="numericalText hide">
                 Supply
               </td>
               <td
                 onClick={() => sortNum("priceChange1h")}
-                className="numericalText"
+                className="numericalText hide"
               >
                 Price Change(1H)
               </td>
               <td
                 onClick={() => sortNum("priceChange1d")}
-                className="numericalText"
+                className="numericalText hide"
               >
                 Price Change(1D)
               </td>
               <td
                 onClick={() => sortNum("priceChange1w")}
-                className="numericalText"
+                className="numericalText hide"
               >
                 Price Change(1W)
               </td>

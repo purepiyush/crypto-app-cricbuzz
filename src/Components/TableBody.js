@@ -14,11 +14,11 @@ const TableBody = ({ coin, addFav }) => {
       </td>
       <td className="numericalText">${coin.price.toFixed(2)}</td>
       <td className="numericalText">${intToString(coin.marketCap)}</td>
-      <td className="numericalText">${intToString(coin.volume)}</td>
-      <td className="numericalText">${intToString(coin.totalSupply)}</td>
-      <td className="numericalText" className={coin.priceChange1d>0 ? "green" : "red"} >{coin.priceChange1h}%</td>
-      <td className="numericalText" className={coin.priceChange1d>0 ? "green" : "red"}>{coin.priceChange1d}%</td>
-      <td className="numericalText" className={coin.priceChange1d>0 ? "green" : "red"}>{coin.priceChange1w}%</td>
+      <td className="numericalText hide">${intToString(coin.volume)}</td>
+      <td className="numericalText hide">${intToString(coin.totalSupply)}</td>
+      <td className={coin.priceChange1d>0 ? "green" : "red"} className="numericalText hide" >{coin.priceChange1h}%</td>
+      <td className={coin.priceChange1d>0 ? "green" : "red"} className="numericalText hide">{coin.priceChange1d}%</td>
+      <td className={coin.priceChange1d>0 ? "green" : "red"} className="numericalText hide">{coin.priceChange1w}%</td>
     </tr>
   );
 };

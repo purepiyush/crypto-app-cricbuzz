@@ -12,7 +12,7 @@ const Navbar = () => {
                         <input type="text" placeholder='search your crypto here'/>
                         <button type="submit"><i className="fa fa-search"></i></button>
                     </div>
-                    <span>your Favourites</span>
+                    {/* <span>Favourites</span> */}
                 </div>
             </li> 
         </ul>

@@ -1,8 +1,15 @@
 .removeBtn{
-    background-color: red;
+  background-color: red;
   border-radius: 5px;
   color: white;
   height: 60%;
   width: 70px;
   cursor: pointer;
+}
+
+@media (orientation : portrait){
+  .removeBtn{
+    width: 40px;
+    font-size: x-small;
+  }
 }

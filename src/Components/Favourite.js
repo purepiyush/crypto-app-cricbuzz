@@ -57,12 +57,12 @@ const Favourite = ({ coin,removeFav }) => {
               </div>
             </td>
             <td>${coin.price.toFixed(2)}</td>
-            <td>${intToString(coin.marketCap)}</td>
-            <td>${intToString(coin.volume)}</td>
-            <td>${intToString(coin.totalSupply)}</td>
-            <td>{coin.priceChange1h}%</td>
-            <td>{coin.priceChange1d}%</td>
-            <td>{coin.priceChange1w}%</td>
+            <td className="hide">${intToString(coin.marketCap)}</td>
+            <td className="hide">${intToString(coin.volume)}</td>
+            <td className="hide">${intToString(coin.totalSupply)}</td>
+            <td className="hide">{coin.priceChange1h}%</td>
+            <td className="hide">{coin.priceChange1d}%</td>
+            <td className="hide">{coin.priceChange1w}%</td>
             <td>
               <button onClick={()=>removeFav(coin)} className="removeBtn">remove</button>
             </td>
