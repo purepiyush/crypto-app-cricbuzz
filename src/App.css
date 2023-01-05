@@ -49,7 +49,7 @@ img {
 }
 
 .background {
-  width: 98vw;
+  width: 100vw;
   height: 350px;
   background-image: linear-gradient(to right, blue, lightblue);
   display: flex;
