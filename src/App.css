@@ -12,7 +12,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.tableFav{
+.tableFav {
   border-collapse: collapse;
   background-color: black;
   color: white;
@@ -20,15 +20,13 @@
   margin-top: 10px;
 }
 
-.btnMore{
-  /* margin: 20px; */
+.btnMore {
   margin: 110px 0;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
-.btnMore button:hover{
+.btnMore button:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 img {
@@ -39,7 +37,6 @@ img {
 .name-image-symbol {
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
 }
 
 .name-symbol {
@@ -52,53 +49,52 @@ img {
 }
 
 .background {
-  width: 100vw;
+  width: 98vw;
   height: 350px;
-  background-image: linear-gradient(to right, blue,lightblue);
+  background-image: linear-gradient(to right, blue, lightblue);
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 
-tbody tr:hover{
+tbody tr:hover {
   background-color: rgb(213, 208, 208);
 }
-.tableFav tbody tr:hover{
+.tableFav tbody tr:hover {
   background-color: grey;
 }
 
-.green{
+.green {
   color: green;
 }
 
-.red{
+.red {
   color: red;
 }
 
-tr { 
+tr {
   border: solid;
   border-width: 0.5px 0;
   border-color: rgb(240, 238, 235);
 }
 
-thead td{
+thead td {
   color: grey;
   cursor: pointer;
 }
 
-.para{
+.para {
   text-align: center;
 }
 
-.para h3{
+.para h3 {
   color: white;
 }
 
-button{
+button {
   border: none;
 }
 
-.btnMore button{
+.btnMore button {
   background-color: green;
   border-radius: 5px;
   color: white;
@@ -106,53 +102,16 @@ button{
   width: 20%;
   cursor: pointer;
 }
-/* 
-thead {
-  font-size: 0.9rem;
-  background: rgb(250, 250, 250) !important;
-  border-left: none !important;
-  font-weight: 500 !important;
-  color: rgba(0, 0, 0, 0.6) !important;
-} */
 
-/* td{
-  vertical-align: middle;
-} */
-
-/* .main{
-  width: 80vw;
-  margin: auto;
-  max-width: 1200px;
-    box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px !important;
-    border: none !important;
-  z-index: 1;
-  position: absolute;
-  margin-left: 10vw;
-  background: white;
-    
-}
-
-.container-top{
-  position: fixed;
-  height: 15vh;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 0;
-  background: linear-gradient(to right, rgb(63, 81, 181), rgb(100, 181, 246)) rgb(255, 255, 255) !important;
-} */
-
-.tableFav thead{
+.tableFav thead {
   background-color: #fff;
 }
 
-
-@media (orientation: portrait){
-  table{
+@media (orientation: portrait) {
+  table {
     font-size: small;
   }
-  .hide{
+  .hide {
     display: none;
   }
 }
-

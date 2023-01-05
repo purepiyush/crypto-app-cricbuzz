@@ -5,18 +5,19 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import TableBody from "./Components/TableBody";
 
-
-const getLocalFav = ()=>{
+const getLocalFav = () => {
   const list = localStorage.getItem("fav");
-  console.log(list);
+  // console.log(list);
   return list ? JSON.parse(list) : [];
-}
+};
 
 const App = () => {
   const [coins, setCoins] = useState([]);
   const [coinsCount, setCoinsCount] = useState(20);
   const [order, setOrder] = useState("ASC");
   const [fav, setFav] = useState(getLocalFav());
+  const [search, setSearch] = useState("");
+
 
   const addFav = (coin) => {
     if (fav.length >= 3) return;
@@ -24,15 +25,15 @@ const App = () => {
     setFav([...fav, coin]);
   };
 
-  useEffect(()=>{
-    localStorage.setItem("fav",JSON.stringify(fav));
-  },[fav])
+  useEffect(() => {
+    localStorage.setItem("fav", JSON.stringify(fav));
+  }, [fav]);
 
   const removeFav = (coin) => {
     if (fav.length == 0) return;
     const index = fav.findIndex((elem) => elem.id === coin.id);
-    const arr=[...fav];
-    console.log(index);
+    const arr = [...fav];
+    // console.log(index);
     arr.splice(index, 1);
     setFav(arr);
   };
@@ -75,6 +76,22 @@ const App = () => {
     }
   };
 
+  // let filteredCoins = coins;
+
+  // const searchCall = (val) => {
+  //   console.log(val);
+  //   val = val.toLowerCase();
+    
+  //   // setCoins((coins) => filteredCoins);
+    
+  // };
+
+  let filteredCoins = coins.filter((coin) => {
+    // if (coin.name.toLowerCase().includes(val)) console.log(coin.name);
+    return coin.name.toLowerCase().includes(search);
+  });
+
+
   useEffect(() => {
     fetch(
       `https://api.coinstats.app/public/v1/coins?skip=0&limit=${coinsCount}`
@@ -85,12 +102,13 @@ const App = () => {
 
   return (
     <>
-      <Navbar/>
+      <Navbar setSearch={setSearch} />
       <div className="main">
         <div className="background">
           <div className="para">
             <h3>
-              List of Your Favourite crypto will be shown here, click on them to add now
+              List of Your Favourite crypto will be shown here, click on them to
+              add now
             </h3>
           </div>
           {fav.length > 0 && (
@@ -132,10 +150,16 @@ const App = () => {
               >
                 Market Cap
               </td>
-              <td onClick={() => sortNum("volume")} className="numericalText hide">
+              <td
+                onClick={() => sortNum("volume")}
+                className="numericalText hide"
+              >
                 Volume
               </td>
-              <td onClick={() => sortNum("supply")} className="numericalText hide">
+              <td
+                onClick={() => sortNum("supply")}
+                className="numericalText hide"
+              >
                 Supply
               </td>
               <td
@@ -159,7 +183,7 @@ const App = () => {
             </tr>
           </thead>
           <tbody>
-            {coins.map((coin, index) => (
+            {filteredCoins.map((coin, index) => (
               <TableBody key={coin.id} coin={coin} addFav={addFav} />
             ))}
           </tbody>
@@ -170,7 +194,7 @@ const App = () => {
           Show more
         </button>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
