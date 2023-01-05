@@ -88,7 +88,7 @@ const App = () => {
 
   let filteredCoins = coins.filter((coin) => {
     // if (coin.name.toLowerCase().includes(val)) console.log(coin.name);
-    return coin.name.toLowerCase().includes(search);
+    return coin.name.toLowerCase().includes(search.toLowerCase());
   });
 
 
