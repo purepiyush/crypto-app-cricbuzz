@@ -19,7 +19,7 @@ const TableBody = ({ coin, addFav }) => {
       <td className="numericalText hide">${intToString(coin.volume)}</td>
       <td className="numericalText hide">${intToString(coin.totalSupply)}</td>
       <td
-        className={`${coin.priceChange1d > 0 ? "green" : "red"} numericalText hide`}
+        className={`${coin.priceChange1h > 0 ? "green" : "red"} numericalText hide`}
       >
         {coin.priceChange1h}%
       </td>
@@ -29,7 +29,7 @@ const TableBody = ({ coin, addFav }) => {
         {coin.priceChange1d}%
       </td>
       <td
-        className={`${coin.priceChange1d > 0 ? "green" : "red"} numericalText hide`}
+        className={`${coin.priceChange1w > 0 ? "green" : "red"} numericalText hide`}
       >
         {coin.priceChange1w}%
       </td>
