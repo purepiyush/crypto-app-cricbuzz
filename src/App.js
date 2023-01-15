@@ -13,7 +13,7 @@ const getLocalFav = () => {
 
 const App = () => {
   const [coins, setCoins] = useState([]);
-  const [coinsCount, setCoinsCount] = useState(20);
+  const [coinsCount, setCoinsCount] = useState(0);
   const [order, setOrder] = useState("ASC");
   const [fav, setFav] = useState(getLocalFav());
   const [search, setSearch] = useState("");
@@ -94,10 +94,19 @@ const App = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.coinstats.app/public/v1/coins?skip=0&limit=${coinsCount}`
-    )
+      `https://api.coinstats.app/public/v1/coins?skip=${coinsCount}&limit=20`
+      )
       .then((res) => res.json())
-      .then((data) => setCoins(data.coins));
+      .then((data) => {
+        // newCoins.push(data.coins);
+      // let newCoins = coins;
+      // console.log(coins);
+      // if(coins)
+      //   newCoins = [...newCoins,data.coins]
+      // console.log(newCoins);
+      let newCoins = [...coins,...data.coins]
+      return setCoins(newCoins)}
+    );
   }, [coinsCount]);
 
   return (
@@ -190,9 +199,9 @@ const App = () => {
         </table>
       </div>
       <div className="btnMore">
-        <button onClick={() => setCoinsCount((e) => e + 20)} className="">
+        {coins.length>0 && <button onClick={() => setCoinsCount((e) => e + 20)}>
           Show more
-        </button>
+        </button>}
       </div>
       <Footer />
     </>

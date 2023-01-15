@@ -114,4 +114,10 @@ button {
   .hide {
     display: none;
   }
+  /* .background{
+    width: 95vw;
+  } */
+  .main{
+    width: 100%;
+  }
 }
