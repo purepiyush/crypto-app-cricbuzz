@@ -107,6 +107,9 @@ button {
   background-color: #fff;
 }
 
+.symbol{
+  font-size: small;
+}
 @media (orientation: portrait) {
   table {
     font-size: small;
